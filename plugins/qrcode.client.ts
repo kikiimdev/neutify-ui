@@ -1,7 +1,7 @@
 import * as _QRCodeStyling from "qr-code-styling"
 import type { Options } from "qr-code-styling"
 
-const QRCodeStyling = ((_QRCodeStyling as any)?.default as any) ?? _QRCodeStyling
+const QRCodeStyling = _QRCodeStyling?.default || _QRCodeStyling
 
 export default defineNuxtPlugin((nuxtApp) => {
   let qrCodeStyling: any
