@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { default as QRCodeStyling, type Options } from "qr-code-styling";
+import { type Options } from "qr-code-styling";
 
 const props = withDefaults(
   defineProps<{
@@ -39,11 +39,14 @@ const options: Options = {
   },
 };
 
-const qrCodeStyling: QRCodeStyling = $qrCodeStyling(options);
+const qrCodeStyling = ref<any>();
 
 onMounted(() => {
-  // Append QR code to DOM element
-  qrCodeStyling.append(qrCode.value!);
+  import("qr-code-styling").then(({ default: QRCodeStyling }) => {
+    qrCodeStyling.value = new QRCodeStyling(options);
+    // Append QR code to DOM element
+    qrCodeStyling.value.append(qrCode.value!);
+  });
   // Add viewbox to make it resizable
   // @ts-ignore
   qrCode.value!.firstChild!.setAttribute("viewBox", "0 0 300 300");
@@ -55,7 +58,7 @@ watch(
   (newValue: string) => {
     // Update QR code data when props change
     options.data = newValue;
-    qrCodeStyling.update(options);
+    qrCodeStyling.value?.update(options);
     // Add viewbox to make it resizable
     // @ts-ignore
     qrCode.value!.firstChild!.setAttribute("viewBox", "0 0 300 300");

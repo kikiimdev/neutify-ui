@@ -8,4 +8,10 @@ export default defineNuxtConfig({
   //   components: ['DatasetComponent', 'GridComponent', 'TooltipComponent'],
   //   features: ['LabelLayout', 'UniversalTransition'],
   // }
+
+  vite: {
+    ssr: {
+      noExternal: ['qr-code-styling']
+    }
+  }
 })
