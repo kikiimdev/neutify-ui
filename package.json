@@ -1,0 +1,30 @@
+{
+  "name": "@neutify/ui",
+  "type": "module",
+  "version": "0.0.1",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "dev": "nuxi dev .playground",
+    "dev:prepare": "nuxt prepare .playground",
+    "build": "nuxt build .playground",
+    "generate": "nuxt generate .playground",
+    "preview": "nuxt preview .playground",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.21",
+    "@iconify-json/simple-icons": "^1.2.18",
+    "@nuxt/eslint": "latest",
+    "echarts": "^5.5.1",
+    "eslint": "^9.17.0",
+    "nuxt": "^3.15.1",
+    "nuxt-echarts": "0.2.4",
+    "typescript": "^5.7.2",
+    "vue": "latest"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^3.0.0-alpha.10",
+    "qr-code-styling": "^1.9.0",
+    "tailwindcss": "^4.0.0-beta.8"
+  }
+}
