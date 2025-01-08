@@ -43,13 +43,16 @@ const qrCodeStyling = ref<any>();
 
 onMounted(() => {
   import("qr-code-styling").then(({ default: QRCodeStyling }) => {
+    console.log("QRCodeStyling", QRCodeStyling);
     qrCodeStyling.value = new QRCodeStyling(options);
+    console.log("qrCodeStyling", qrCodeStyling.value);
     // Append QR code to DOM element
-    qrCodeStyling.value.append(qrCode.value!);
+    qrCodeStyling.value.append(qrCode.value);
+
+    // Add viewbox to make it resizable
+    // @ts-ignore
+    qrCode.value?.firstChild?.setAttribute?.("viewBox", "0 0 300 300");
   });
-  // Add viewbox to make it resizable
-  // @ts-ignore
-  qrCode.value?.firstChild?.setAttribute?.("viewBox", "0 0 300 300");
 });
 
 watch(
