@@ -49,7 +49,7 @@ onMounted(() => {
   });
   // Add viewbox to make it resizable
   // @ts-ignore
-  qrCode.value!.firstChild!.setAttribute("viewBox", "0 0 300 300");
+  qrCode.value?.firstChild?.setAttribute?.("viewBox", "0 0 300 300");
 });
 
 watch(
@@ -61,7 +61,7 @@ watch(
     qrCodeStyling.value?.update(options);
     // Add viewbox to make it resizable
     // @ts-ignore
-    qrCode.value!.firstChild!.setAttribute("viewBox", "0 0 300 300");
+    qrCode.value?.firstChild?.setAttribute?.("viewBox", "0 0 300 300");
   }
 );
 </script>
