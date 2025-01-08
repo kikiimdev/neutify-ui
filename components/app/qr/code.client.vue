@@ -16,7 +16,7 @@ const props = withDefaults(
 
 const computedProps = computed(() => props);
 
-const { $qrCodeStyling } = useNuxtApp();
+// const { $qrCodeStyling } = useNuxtApp();
 const qrCode = ref<HTMLElement | null>(null);
 
 // Default options
