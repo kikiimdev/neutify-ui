@@ -1,3 +1,5 @@
+<script></script>
+
 <template>
   <NuxtLayout name="dashboard">
     <AppPageHeader
@@ -10,7 +12,7 @@
 
     <AppPageBody>
       <ClientOnly>
-        <AppQrCode data="https://nuxtjs.org" />
+        <QrCode model-value="https://nuxtjs.org" />
       </ClientOnly>
       <div class="min-h-[200vh]" />
     </AppPageBody>
