@@ -47,11 +47,10 @@ const option = computed<ECOption>(() => ({
       type: "shadow",
     },
     formatter: function (params: any) {
-      console.log(params);
-      return typeof params === "string" ? params : JSON.stringify(params);
-      // const tar = params[1];
-      // const isPlurals = tar.value > 1;
-      // return `${tar.value} message${isPlurals ? "s" : ""}`;
+      const data = params?.at(0);
+      const { count, date } = data?.value || { count: 0, date: "" };
+      const isPlurals = count > 1;
+      return `${date}<br/>${count} message${isPlurals ? "s" : ""}`;
     },
   },
   xAxis: {
