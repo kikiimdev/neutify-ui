@@ -48,7 +48,8 @@ const option = computed<ECOption>(() => ({
     },
     formatter: function (params: any) {
       const tar = params[1];
-      return tar.name + "<br/>" + tar.seriesName + " : " + tar.value;
+      const isPlurals = tar.value > 1;
+      return `${tar.value} message${isPlurals ? "s" : ""}`;
     },
   },
   xAxis: {
