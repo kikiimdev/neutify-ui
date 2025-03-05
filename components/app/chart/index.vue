@@ -50,7 +50,9 @@ const option = computed<ECOption>(() => ({
       const data = params?.at(0);
       const { count, date } = data?.value || { count: 0, date: "" };
       const isPlurals = count > 1;
-      return `${date}<br/>${count} message${isPlurals ? "s" : ""}`;
+      return `${date}<br/><strong>${count}</strong> message${
+        isPlurals ? "s" : ""
+      }`;
     },
   },
   xAxis: {
